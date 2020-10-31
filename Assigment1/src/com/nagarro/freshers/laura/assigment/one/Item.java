@@ -4,7 +4,7 @@ import java.util.*;
 public class Item {
 
 	static Scanner input = new Scanner(System.in);
-	
+
 	public static void main(String[] args) {
 		
 		System.out.println("Enter item details");
@@ -57,21 +57,24 @@ public class Item {
 			}
 			
 			
-			// Type
-			char obtainType = 0;
-			System.out.print("Type: ");
-			obtainType = input.next().toUpperCase().charAt(0);
-			boolean wrongType = true;
-				
-				while (wrongType) {
-					if (obtainType == 'R' || obtainType == 'M' || obtainType == 'I' ) {
-						wrongType = false;
-					}else {
-						System.out.println("Invalid type. Please enter RAW, MANUFACTURED or IMPORTED");
-						System.out.print("Type: ");
-						obtainType = input.next().toUpperCase().charAt(0);
-					}
+		// Type
+		char itemType = 0;
+		System.out.print("Type: ");
+		itemType = input.next().toUpperCase().charAt(0);
+		boolean wrongType = true;
+			
+			while (wrongType) {
+				if (itemType == 'R' || itemType == 'M' || itemType == 'I' ) {
+					wrongType = false;
+				}else {
+					System.out.println("Invalid type. Please enter RAW, MANUFACTURED or IMPORTED");
+					System.out.print("Type: ");
+					itemType = input.next().toUpperCase().charAt(0);
 				}
+			}
+			
+		ItemInformation item = new ItemInformation(itemName, itemPrice, itemQuantity, itemType); 
+			
 		
 	}
 	
